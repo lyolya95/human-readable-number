@@ -34,7 +34,7 @@ module.exports = function toReadable (number) {
     if (number % 100 === 0) return `${numbers[number / 100]} hundred`;
     if (number % 10 === 0) return `${numbers[Math.floor(number / 100)]} hundred ${numbers[number % 100]}`;
     if (number > 20 && number < 100) return `${numbers[number - (number % 10)]} ${numbers[number % 10]}`;
-    if ( number > 99) {
+    if (number > 99) {
         const hundred = number % 100;
         return (`${numbers[Math.floor(number / 100)]} hundred ${hundred > 20 ? numbers[(hundred) - (number % 10)] : numbers[hundred]} ${hundred > 20 ? numbers[(number % 10)]: ''}`).trim()
     }
